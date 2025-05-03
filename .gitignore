@@ -1,3 +1,26 @@
-.DS_Store
+# GENERAL:
 docs/
+**/.DS_Store
+**/.idea/
 
+# BACKEND:
+# Adapted from the https://github.com/github/gitignore repository
+# Direct Link: https://github.com/github/gitignore/blob/main/Laravel.gitignore
+backend/sakura-notes-laravel-api/vendor/
+backend/sakura-notes-laravel-api/node_modules/
+backend/sakura-notes-laravel-api/npm-debug.log
+backend/sakura-notes-laravel-api/yarn-error.log
+
+backend/sakura-notes-laravel-api/storage/*.key
+backend/sakura-notes-laravel-api/.env
+backend/sakura-notes-laravel-api/Homestead.yaml
+backend/sakura-notes-laravel-api/Homestead.json
+backend/sakura-notes-laravel-api/.vagrant
+backend/sakura-notes-laravel-api/.phpunit.result.cache
+
+backend/sakura-notes-laravel-api/public/build
+backend/sakura-notes-laravel-api/storage/pail
+backend/sakura-notes-laravel-api/.env.backup
+backend/sakura-notes-laravel-api/.env.production
+backend/sakura-notes-laravel-api/.phpactor.json
+backend/sakura-notes-laravel-api/auth.json

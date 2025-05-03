@@ -15,3 +15,7 @@ Image: debian/ubuntu
 Programming Language: php
 
 Database Platform: redis
+
+## Credits
+
+Parts of the code in the `.gitignore` file originate from [github/gitignore](https://github.com/github/gitignore)

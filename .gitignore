@@ -4,6 +4,7 @@ docs/
 **/.idea/
 
 # BACKEND:
+/backend/bruno-collection/
 # Adapted from the https://github.com/github/gitignore repository
 # Direct Link: https://github.com/github/gitignore/blob/main/Laravel.gitignore
 backend/sakura-notes-laravel-api/vendor/

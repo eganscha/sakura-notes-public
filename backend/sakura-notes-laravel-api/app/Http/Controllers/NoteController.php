@@ -53,7 +53,6 @@ class NoteController extends Controller
      */
     public function store(Request $request) : JsonResponse
     {
-        // Laravel will automatically parse the JSON and populate $request->input(...).
         $validatedRequest = null;
         try {
             $validatedRequest = $request->validate([

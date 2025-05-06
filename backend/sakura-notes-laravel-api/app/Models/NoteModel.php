@@ -28,10 +28,10 @@ class NoteModel implements JsonSerializable
     public function jsonSerialize(): array
     {
         return [
-            'id' => $this->id,
-            'email' => $this->email,
-            'content' => $this->content,
-            'tags' => $this->tags,
+            'id' => $this->getId(),
+            'email' => $this->getEmail(),
+            'content' => $this->getContent(),
+            'tags' => $this->getTags(),
         ];
     }
 

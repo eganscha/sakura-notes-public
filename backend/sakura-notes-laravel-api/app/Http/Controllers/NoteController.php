@@ -6,6 +6,7 @@ use App\Models\NoteModel;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use InvalidArgumentException;
 use JsonException;
@@ -20,6 +21,13 @@ class NoteController extends Controller
      */
     public function show(string $id) : JsonResponse
     {
+        if(!Str::isUuid($id)) {
+            Log::warning("Passed string \$id [$id] is not a valid UUID.");
+            return response()->json([
+                'error' => 'Invalid json_request.',
+            ], 422);
+        }
+
         $note = null;
         try {
             $note = NoteModel::find($id);

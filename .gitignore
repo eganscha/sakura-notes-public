@@ -1,12 +1,10 @@
 # GENERAL:
+# Exclude the docs/ outlining the courses requirements
 docs/
+# Exclude Mac specific files and .idea
 **/.DS_Store
 **/.idea/
 
 # BACKEND:
-# Exclude Bruno (like a local-only Postman) API testing requests. TODO: Reevaluate this decision.
-/backend/bruno-collection/
-
-# INFRA:
-# Exclude at runtime generated redis data (e.g., snapshot.rdb)
-/infra/redis/data/
+# Exclude backend tests folder, in fact just Bruno (like a local-only Postman) for testing API requests. TODO: Reevaluate this decision.
+services/backend/tests/

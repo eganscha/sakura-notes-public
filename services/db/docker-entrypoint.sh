@@ -1,6 +1,6 @@
 #!/bin/bash
  
- DIR="/app/data"
+DIR="/app/data"
 if [ ! -d "$DIR" ]; then
   echo "Creating directory in $DIR."
   mkdir $DIR

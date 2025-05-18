@@ -20,7 +20,7 @@ RUN apt-get update \
 # and subsequently launch the redis-server as a result of it
 COPY ./db-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/db-entrypoint.sh
-ENTRYPOINT [ "db-entrypoint.sh" ]
+ENTRYPOINT [ "docker-entrypoint.sh" ]
 
 EXPOSE 6379
 

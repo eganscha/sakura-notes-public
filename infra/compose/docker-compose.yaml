@@ -1,0 +1,32 @@
+services:
+  redisdb:
+    build:
+      context: ../../services/db
+    volumes:
+      - database:/data/db
+    env_file:
+      - ./env/redisdb.env
+    networks:
+      - sakura-notes-net
+    ports:
+      - '6379:6379'
+  backend:
+    build:
+      context: ../../services/backend/sakura-notes-laravel-api
+    volumes:
+      - api-logs:/data/logs
+    env_file:
+      - ./env/api.env
+    networks:
+      - sakura-notes-net
+    ports:
+      - '8000:8000'
+    depends_on:
+      - redisdb
+
+volumes:
+  database:
+  api-logs:
+
+networks:
+  sakura-notes-net:

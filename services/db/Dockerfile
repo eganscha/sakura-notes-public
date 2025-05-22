@@ -24,4 +24,5 @@ ENTRYPOINT [ "docker-entrypoint.sh" ]
 
 EXPOSE 6379
 
-CMD [ "redis-server", "./redis.conf" ]
+# CMD [ "redis-server", "./redis.conf" ]
+CMD ["sh", "-c", "redis-server ./redis.conf --requirepass ${REDIS_PASSWORD}"]

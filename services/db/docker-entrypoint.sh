@@ -32,7 +32,7 @@ fi
 
 # Check if the current crontab contains a line that matches $BACKUP_SCRIPT
 # Add it if it does not
-BACKUP_SCRIPT="/app/backup_script.sh"
+BACKUP_SCRIPT="/usr/local/bin/backup_script.sh"
 if ! crontab -l | grep -Fq "$BACKUP_SCRIPT"; then 
   # write out current crontab to a temp file
   crontab -l > temp_crontab
@@ -52,6 +52,12 @@ if ! crontab -l | grep -Fq "$BACKUP_SCRIPT"; then
   # install new cron file and remove temp_crontab
   crontab temp_crontab
   rm temp_crontab
+fi
+
+# Start cron if it's not already running
+if ! pgrep -x cron >/dev/null 2>&1 ; then
+    /sbin/service cron start
+    echo "$(timestamp): Started cron as it wasn't running already." >> "$STD_LOG"
 fi
 
 # Execute the CMD command as a command,

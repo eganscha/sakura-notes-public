@@ -20,6 +20,7 @@ RUN apt-get update \
 
 # Copy the backup_script
 COPY ./backup_script.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/backup_script.sh
 
 # Copy and execute the docker-entrypoint script
 # and subsequently launch the redis-server as a result of it

@@ -21,13 +21,32 @@ if [ ! -d "$DATA_DIR" ]; then
   echo "$(timestamp): Created DATA_DIR in $DATA_DIR." >> "$STD_LOG"
 fi
 
+# Create /app/data/backups directory if it doesn't exist yet
+BACKUP_DIR="${DATA_DIR}/backups"
+if [ ! -d "$BACKUP_DIR" ]; then
+  mkdir $BACKUP_DIR
+  echo "$(timestamp): Created BACKUP_DIR in $BACKUP_DIR." >> "$STD_LOG"
+fi
+
+# Create .env file with passwords if it doesn't exist yet
+# (necessary for chron scheduled scripts, as they don't have access to ENV variables otherwise)
+ENV_FILE="/etc/redisdb.env"
+if [ ! -f "$ENV_FILE" ]; then
+  touch "$ENV_FILE"
+  chmod 600 "$ENV_FILE"
+
+  if [ -n "${REDIS_PASSWORD}" ]; then
+    echo "REDIS_PASSWORD=$REDIS_PASSWORD" >> "$ENV_FILE"
+  else
+    echo "\$REDIS_PASSWORD ENV_VAR was not set!" >> "$STD_LOG"
+  fi
+fi
+
 # Create cron-file, if it doesn't exist already
 # (discard both stdout and stderr, we just care if the operation succeeded)
 if ! crontab -l > /dev/null 2>/dev/null; then
   crontab -
   echo "$(timestamp): Created cron-file." >> "$STD_LOG"
-else 
-  echo "$(timestamp): Did not create cron-file." >> "$STD_LOG"
 fi
 
 # Check if the current crontab contains a line that matches $BACKUP_SCRIPT
@@ -44,7 +63,7 @@ if ! crontab -l | grep -Fq "$BACKUP_SCRIPT"; then
     
     echo "$(timestamp): Scheduled backups via cron-pattern: [ $CRON_SCHEDULING ]." >> "$STD_LOG"
   else
-    echo "*/10 * * * * $BACKUP_SCRIPT" >> temp_crontab
+    echo "*/10 * * * * $BACKUP_SCRIPT" >> temp_crontab 
     
     echo "$(timestamp): Scheduled backups via DEFAULT cron-pattern: [ */10 * * * * ]." >> "$STD_LOG"
   fi

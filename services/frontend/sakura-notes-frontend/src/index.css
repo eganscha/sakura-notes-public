@@ -7,11 +7,15 @@
   --font-weight-bold: 700;
 
   /* Colors as defined by the "sakura theme" */
-  --fg-strong: #A67285;
-  --fg-light: #F2A7CA;
-  --base-black: #010D00;
-  --bg-strong: #D9CBBA;
-  --bg-light: #F2E5D5;
+  --fg-strong: #F2A0B6;
+  --fg-light: #A66D7C;
+  --base-black: #0D0D0D;
+  --bg-strong: #E1E1E1;
+  --bg-medium: #EFEFEF;
+  /*--bg-light: #F5F5F5;*/
+  --bg-light: #FFFFFF;
+
+  background-color: var(--bg-light);
 
   /* Vite defaults */
   font-synthesis: none;

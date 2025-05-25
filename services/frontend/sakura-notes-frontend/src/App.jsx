@@ -11,7 +11,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <Container sx={{ pt: 300 }}>
+    <Container sx={{ bgcolor: 'var(--bg-medium)' }}>
       <RouterProvider router={router} />
     </Container>
   )

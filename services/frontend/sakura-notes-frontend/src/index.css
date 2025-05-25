@@ -7,12 +7,15 @@
   --font-weight-bold: 700;
 
   /* Colors as defined by the "sakura theme" */
-  --fg-strong: #F2A0B6;
-  --fg-light: #A66D7C;
+  --fg-strong: #BF1542;
+  --fg-light: #D97E8E;
+
   --base-black: #0D0D0D;
+  --base-grey: #6E6E6E;
+  --base-white: #FFFFFF;
+
   --bg-strong: #E1E1E1;
   --bg-medium: #EFEFEF;
-  /*--bg-light: #F5F5F5;*/
   --bg-light: #FFFFFF;
 
   background-color: var(--bg-light);

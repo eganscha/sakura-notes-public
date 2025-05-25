@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    user-select: none;
+}
+
+.container:hover {
+    cursor: pointer;
+}
+
+.logo {
+    width: 26px;
+    height: 26px;
+}
+
+.text {
+    font-family: var(--primary-font);
+    font-weight: var(--font-weight-bold);
+    font-size: 20px;
+
+    margin-left: 4px;
+}

@@ -1,6 +1,7 @@
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import LandingPage from "./pages/LandingPage/LandingPage.jsx";
+import {Container} from "@mui/material";
 
 const router = createBrowserRouter([
   {
@@ -10,9 +11,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <Container sx={{ pt: 300 }}>
       <RouterProvider router={router} />
-    </>
+    </Container>
   )
 }
 

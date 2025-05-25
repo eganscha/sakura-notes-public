@@ -1,5 +1,6 @@
 import styles from "./LandingPage.module.css";
 import { useState } from "react";
+import Button from '@mui/material/Button';
 
 function LandingPage() {
     const [enteredTag, setEnteredTag] = useState('');
@@ -19,6 +20,7 @@ function LandingPage() {
 
                 <button>Search</button>
             </form>
+            <Button variant="contained">Hello world</Button>;
         </>
     );
 }

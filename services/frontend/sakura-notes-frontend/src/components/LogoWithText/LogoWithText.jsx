@@ -1,8 +1,9 @@
 import styles from "./LogoWithText.module.css";
+import { Link } from 'react-router';
 
 function LogoWithText() {
     return (
-        <div className={styles.container}>
+        <Link to="/" className={styles.container}>
             <img className={styles.logo}
                  src="/src/assets/sakura-notes-icon-256-256.png"
                  alt="SakuraNotes Logo"
@@ -11,7 +12,7 @@ function LogoWithText() {
                  style={{ objectFit: 'contain' }}
             />
             <span className={styles.text}>SakuraNotes</span>
-        </div>
+        </Link>
     );
 }
 

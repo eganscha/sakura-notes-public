@@ -3,8 +3,6 @@ import { useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar.jsx";
 import LogoWithText from "../../components/LogoWithText/LogoWithText.jsx";
 import { Container } from "@mui/material";
-import Note from "../../components/Note/Note.jsx";
-import TagCard from "../../components/TagCard/TagCard.jsx";
 import CreateButton from "../../components/CreateButton/CreateButton.jsx";
 import SearchButton from "../../components/SearchButton/SearchButton.jsx";
 import ExplorePopularNotes from "../../components/ExplorePopularNotes/ExplorePopularNotes.jsx";

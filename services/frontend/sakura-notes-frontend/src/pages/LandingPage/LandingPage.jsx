@@ -6,6 +6,7 @@ import {Button, Container} from "@mui/material";
 import Note from "../../components/Note/Note.jsx";
 import TagCard from "../../components/TagCard/TagCard.jsx";
 import CreateButton from "../../components/CreateButton/CreateButton.jsx";
+import SearchButton from "../../components/SearchButton/SearchButton.jsx";
 
 function LandingPage() {
     const [enteredTag, setEnteredTag] = useState('');
@@ -21,18 +22,7 @@ function LandingPage() {
                 <CreateButton></CreateButton>
                 <form className={styles.searchContainer} onSubmit={handleSubmit}>
                     <SearchBar></SearchBar>
-                    <Button variant="contained" sx={{
-                        borderRadius: '10px',
-                        textTransform: 'none',
-                        fontSize: '1rem',
-                        fontWeight: 600,
-                        backgroundColor: 'var(--fg-light)',
-                        color: 'white',
-                        margin: '16px',
-                        '&:hover': {
-                            backgroundColor: 'var(--fg-strong)',
-                        },
-                    }}>Search</Button>
+                    <SearchButton></SearchButton>
                 </form>
             </header>
 

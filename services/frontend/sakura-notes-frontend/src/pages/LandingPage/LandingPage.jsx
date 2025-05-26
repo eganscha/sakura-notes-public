@@ -43,7 +43,9 @@ function LandingPage() {
                     marginTop: '48px',
                     gap: '16px'}}>
 
-                    <Note email={"eganscha@gmail.com"} content={"Hello World!"} tags={["WoW", "Amazing!"]}></Note>
+                    <Note email={"eganscha@gmail.com"} content={"Hello World!"} tags={["Studium", "Cloud Computing"]}></Note>
+                    <Note email={"k.miller@motherbase.com"} content={"Boss?!"} tags={["Gaming", "Metal Gear"]}></Note>
+                    <Note email={"pr@hof.de"} content={"Hof ist toll!"} tags={["Hof", "Innenstadt"]}></Note>
                 </Container>
 
                 <h2 style={{ alignSelf: 'flex-start', marginTop: '64px' }} >Browse by Tag</h2>

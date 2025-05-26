@@ -1,41 +1,29 @@
 import Styles from "./TagCard.module.css";
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {Style} from "@mui/icons-material";
+import {CardActionArea} from "@mui/material";
 
-const bull = (
-    <Box
-        component="span"
-        sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-    >
-        •
-    </Box>
-);
-
-function TagCard() {
+function TagCard( {tag} ) {
     return (
-        <Card sx={{ minWidth: 275 }}>
-            <CardContent>
-                <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-                    Word of the Day
-                </Typography>
-                <Typography variant="h5" component="div">
-                    be{bull}nev{bull}o{bull}lent
-                </Typography>
-                <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>adjective</Typography>
-                <Typography variant="body2">
-                    well meaning and kindly.
-                    <br />
-                    {'"a benevolent smile"'}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Learn More</Button>
-            </CardActions>
+        <Card sx={{ minWidth: 230, height: 90,
+            display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+        }}>
+            <CardActionArea onClick={() => console.log('Card clicked')} sx={{
+                transition: 'background-color 0.2s ease-in',
+                width: '100%', height: '100%',
+                '&:hover': {
+                    backgroundColor: 'var(--bg-medium)'
+                }
+            }}>
+                <CardContent>
+                    <Typography variant="h5" component="div">
+                        { tag }
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
         </Card>
     );
 }

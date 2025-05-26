@@ -56,6 +56,12 @@ function LandingPage() {
                     justifyContent: 'center',
                     marginTop: '48px',
                     gap: '16px'}}>
+
+                    <TagCard tag={"Hof"}></TagCard>
+                    <TagCard tag={"Studium"}></TagCard>
+                    <TagCard tag={"Gaming"}></TagCard>
+                    <TagCard tag={"Cloud Computing"}></TagCard>
+                    <TagCard tag={"Metal Gear"}></TagCard>
                 </Container>
             </Container>
         </>

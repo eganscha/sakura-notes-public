@@ -8,6 +8,7 @@ import TagCard from "../../components/TagCard/TagCard.jsx";
 import CreateButton from "../../components/CreateButton/CreateButton.jsx";
 import SearchButton from "../../components/SearchButton/SearchButton.jsx";
 import ExplorePopularNotes from "../../components/ExplorePopularNotes/ExplorePopularNotes.jsx";
+import BrowseByTag from "../../components/BrowseByTag/BrowseByTag.jsx";
 
 function LandingPage() {
     const [enteredTag, setEnteredTag] = useState('');
@@ -36,21 +37,7 @@ function LandingPage() {
                 marginTop: '48px',
             }}>
                 <ExplorePopularNotes></ExplorePopularNotes>
-                <h2 style={{ alignSelf: 'flex-start', marginTop: '64px' }} >Browse by Tag</h2>
-                <Container sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginTop: '48px',
-                    gap: '16px'}}>
-
-                    <TagCard tag={"Hof"}></TagCard>
-                    <TagCard tag={"Studium"}></TagCard>
-                    <TagCard tag={"Gaming"}></TagCard>
-                    <TagCard tag={"Cloud Computing"}></TagCard>
-                    <TagCard tag={"Metal Gear"}></TagCard>
-                </Container>
+                <BrowseByTag></BrowseByTag>
             </Container>
         </>
     );

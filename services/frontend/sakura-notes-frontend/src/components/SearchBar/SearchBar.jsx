@@ -11,10 +11,10 @@ function SearchBar() {
                 <TextField id="input-with-sx" label="Search by Tag" variant="standard" sx={{
                     width: '100%',
                     label: {
-                        color: 'var(--base-grey)', // default label color
+                        color: 'var(--base-grey)',
                     },
                     '& label.Mui-focused': {
-                        color: 'var(--base-black)', // focused label color
+                        color: 'var(--base-black)',
                     },
                     '& .MuiInput-underline:before': {
                         borderBottomColor: 'var(--base-black)',

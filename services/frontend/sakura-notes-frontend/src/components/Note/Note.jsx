@@ -1,40 +1,31 @@
 import Styles from "./Note.module.css";
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {Style} from "@mui/icons-material";
 
-const bull = (
-    <Box
-        component="span"
-        sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-    >
-        •
-    </Box>
-);
+function Note( { email, tags, content} ) {
+    const listTags = tags.map(tag =>
+        <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
+            {tag}
+        </Typography>
+    );
 
-function Note() {
     return (
         <Card sx={{ minWidth: 275 }}>
             <CardContent>
-                <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-                    Word of the Day
-                </Typography>
+                { listTags }
                 <Typography variant="h5" component="div">
-                    be{bull}nev{bull}o{bull}lent
+                    { content }
                 </Typography>
-                <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>adjective</Typography>
                 <Typography variant="body2">
-                    well meaning and kindly.
-                    <br />
-                    {'"a benevolent smile"'}
+                    <br/>
+                    { email }
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Learn More</Button>
+                <Button size="small">Notes of User</Button>
             </CardActions>
         </Card>
     );

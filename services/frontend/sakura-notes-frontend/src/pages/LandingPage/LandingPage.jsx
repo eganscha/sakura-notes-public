@@ -67,9 +67,7 @@ function LandingPage() {
                     marginTop: '48px',
                     gap: '16px'}}>
 
-                    <Note></Note>
-                    <Note></Note>
-                    <Note></Note>
+                    <Note email={"eganscha@gmail.com"} content={"Hello World!"} tags={["WoW", "Amazing!"]}></Note>
                 </Container>
 
                 <h2 style={{ alignSelf: 'flex-start', marginTop: '64px' }} >Browse by Tag</h2>
@@ -80,12 +78,6 @@ function LandingPage() {
                     justifyContent: 'center',
                     marginTop: '48px',
                     gap: '16px'}}>
-
-                    <TagCard></TagCard>
-                    <TagCard></TagCard>
-                    <TagCard></TagCard>
-                    <TagCard></TagCard>
-                    <TagCard></TagCard>
                 </Container>
             </Container>
         </>

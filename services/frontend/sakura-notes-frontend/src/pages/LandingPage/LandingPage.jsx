@@ -5,6 +5,7 @@ import LogoWithText from "../../components/LogoWithText/LogoWithText.jsx";
 import {Button, Container} from "@mui/material";
 import Note from "../../components/Note/Note.jsx";
 import TagCard from "../../components/TagCard/TagCard.jsx";
+import CreateButton from "../../components/CreateButton/CreateButton.jsx";
 
 function LandingPage() {
     const [enteredTag, setEnteredTag] = useState('');
@@ -17,22 +18,7 @@ function LandingPage() {
         <>
             <header className={styles.header}>
                 <LogoWithText></LogoWithText>
-
-                <Button variant="contained" sx={{
-                    boxShadow: 'none',
-                    borderRadius: '20px',
-                    textTransform: 'none',
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    backgroundColor: 'var(--base-black)',
-                    color: 'white',
-                    margin: '16px',
-                    '&:hover': {
-                        boxShadow: 'none',
-                        backgroundColor: 'var(--fg-strong)',
-                    },
-                }}>Create</Button>
-
+                <CreateButton></CreateButton>
                 <form className={styles.searchContainer} onSubmit={handleSubmit}>
                     <SearchBar></SearchBar>
                     <Button variant="contained" sx={{

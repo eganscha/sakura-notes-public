@@ -4,7 +4,7 @@ import getAllNotesByTag from "../../utils/API/requests/getAllNotesByTag.js";
 // import getAllNotesByEmail from "../../utils/API/requests/getAllNotesByEmail.js";
 import NotesList from "../../components/NotesList/NotesList.jsx";
 import {useSearchParams} from "react-router";
-import SearchBar from "../../components/SearchBar/SearchBar.jsx";
+import Header from "../../components/Header/Header.jsx";
 
 function NotesPage() {
     const [notes, setNotes] = useState(null);
@@ -35,7 +35,7 @@ function NotesPage() {
 
     return (
         <div>
-            <SearchBar></SearchBar>
+            <Header></Header>
             {notes ? (<NotesList notes={notes}/>) : null}
         </div>
     );

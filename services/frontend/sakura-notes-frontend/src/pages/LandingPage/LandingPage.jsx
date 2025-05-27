@@ -1,36 +1,13 @@
 import styles from "./LandingPage.module.css";
-import { useState } from "react";
-import SearchBar from "../../components/SearchBar/SearchBar.jsx";
-import LogoWithText from "../../components/LogoWithText/LogoWithText.jsx";
 import { Container } from "@mui/material";
-import CreateButton from "../../components/CreateButton/CreateButton.jsx";
-import SearchButton from "../../components/SearchButton/SearchButton.jsx";
 import ExplorePopularNotes from "../../components/ExplorePopularNotes/ExplorePopularNotes.jsx";
 import BrowseByTag from "../../components/BrowseByTag/BrowseByTag.jsx";
-import {useNavigate} from "react-router";
+import Header from "../../components/Header/Header.jsx";
 
 function LandingPage() {
-    const [enteredTag, setEnteredTag] = useState('');
-    const navigate = useNavigate();
-
-    async function handleSubmit(event) {
-        event.preventDefault();
-        if(enteredTag) {
-            navigate(`/notes?tag=${enteredTag}`);
-        }
-    }
-
     return (
         <>
-            <header className={styles.header}>
-                <LogoWithText></LogoWithText>
-                <CreateButton></CreateButton>
-                <form className={styles.searchContainer} onSubmit={handleSubmit}>
-                    <SearchBar value={enteredTag} onChange={e => setEnteredTag(e.target.value)}></SearchBar>
-                    <SearchButton></SearchButton>
-                </form>
-            </header>
-
+            <Header></Header>
             <Container sx={{
                 display: 'flex',
                 flexDirection: 'column',

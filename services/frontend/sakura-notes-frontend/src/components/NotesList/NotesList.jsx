@@ -1,9 +1,9 @@
-import Styles from './NotesList.module.css';
+import styles from './NotesList.module.css';
 import Note from '../Note/Note';
 
 function NotesList( { notes } ) {
     const listItems = notes.map((note) =>
-        <li key={note.id}>
+        <li className={styles.notesGridItem} key={note.id}>
             <Note
                 email={note.email}
                 tags={note.tags}
@@ -13,7 +13,7 @@ function NotesList( { notes } ) {
     );
 
     return (
-        <ul>
+        <ul className={styles.notesGridContainer}>
             {listItems}
         </ul>
     );

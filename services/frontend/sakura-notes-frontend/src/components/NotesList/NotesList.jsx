@@ -3,9 +3,8 @@ import Note from '../Note/Note';
 
 function NotesList( { notes } ) {
     const listItems = notes.map((note) =>
-        <li>
+        <li key={note.id}>
             <Note
-                key={note.id}
                 email={note.email}
                 tags={note.tags}
                 content={note.content}>

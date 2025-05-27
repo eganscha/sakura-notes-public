@@ -50,3 +50,7 @@ h3 {
   font-weight: var(--font-weight-medium);
   font-style: normal;
 }
+
+p {
+  font-family: var(--primary-font);
+}

@@ -3,7 +3,7 @@ import NoteModel from "../../models/NoteModel.js";
 
 // Description: Gets every note associated with a single email.
 // ------------------------------------------------------------------
-// Request: GET: BASE_URL/email/email?email={email}
+// Request: GET: BASE_URL/emails/emails?email={email}
 // Headers: "Content-Type": "application/json"
 // Body: None
 // ------------------------------------------------------------------

@@ -5,6 +5,7 @@ import getAllNotesByEmail from "../../utils/API/requests/getAllNotesByEmail.js";
 import NotesList from "../../components/NotesList/NotesList.jsx";
 import {useSearchParams} from "react-router";
 import Header from "../../components/Header/Header.jsx";
+import {Container} from "@mui/material";
 
 function NotesPage() {
     const [notes, setNotes] = useState(null);
@@ -36,7 +37,13 @@ function NotesPage() {
     return (
         <div>
             <Header></Header>
-            {notes ? (<NotesList notes={notes}/>) : null}
+            <Container sx={{
+                marginTop: '48px'
+            }}>
+                {tag ? <h1 style={{ marginBottom: '8px' }}>Notes tagged with "{tag}"</h1> : null}
+                {email ? <h1 style={{ marginBottom: '8px' }}>Notes of "{email}"</h1> : null}
+                {notes && notes.length > 0 ? (<NotesList notes={notes}/>) : (<p>No Notes</p>)}
+            </Container>
         </div>
     );
 }

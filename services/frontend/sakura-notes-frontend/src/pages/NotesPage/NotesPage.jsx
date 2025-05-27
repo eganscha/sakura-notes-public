@@ -1,13 +1,15 @@
 import Styles from './NotesPage.module.css';
 import {useEffect} from "react";
 import getSingularNoteByID from "../../utils/API/requests/getSingularNoteByID.js";
+import getAllNotesByTag from "../../utils/API/requests/getAllNotesByTag.js";
 
 function NotesPage() {
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const note = await getSingularNoteByID("27b60ec7-5654-4988-b8c1-bb3d804fbc13")
+                const notes = await getAllNotesByTag("metal gear");
+                console.log(notes);
             } catch (exception) {
                 console.error(exception)
             }

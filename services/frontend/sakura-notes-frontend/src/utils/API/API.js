@@ -4,9 +4,9 @@ const API = {
 		// POST
 		ADD_SINGULAR_NOTE: "notes",
 		// GET
-		GET_SINGULAR_NOTE_BY_ID: (noteID) => {return `notes/${noteID}`;},
-		GET_ALL_NOTE_IDS_BY_EMAIL: (email) => {return `email/${email}`;},
-		GET_ALL_NOTE_IDS_BY_TAG: (tag) => {return `tag/${tag}`;},
+		GET_SINGULAR_NOTE_BY_ID: (noteID) => {return `notes/${encodeURIComponent(noteID)}`;},
+		GET_ALL_NOTES_BY_EMAIL: (email) => {return `email/email?email=${encodeURIComponent(email)}`;},
+		GET_ALL_NOTES_BY_TAG: (tag) => {return `tag/tag?tag=${encodeURIComponent(tag)}`;},
 	},
 };
 

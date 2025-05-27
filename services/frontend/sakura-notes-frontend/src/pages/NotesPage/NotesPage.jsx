@@ -1,7 +1,7 @@
 import Styles from './NotesPage.module.css';
 import {useEffect, useState} from "react";
 import getAllNotesByTag from "../../utils/API/requests/getAllNotesByTag.js";
-// import getAllNotesByEmail from "../../utils/API/requests/getAllNotesByEmail.js";
+import getAllNotesByEmail from "../../utils/API/requests/getAllNotesByEmail.js";
 import NotesList from "../../components/NotesList/NotesList.jsx";
 import {useSearchParams} from "react-router";
 import Header from "../../components/Header/Header.jsx";
@@ -20,7 +20,7 @@ function NotesPage() {
                 if(tag) {
                     response = await getAllNotesByTag(tag);
                 } else if (email) {
-                    // response = await getAllNotesByEmail(email);
+                    response = await getAllNotesByEmail(email);
                 }
 
                 if (response) {

@@ -25,7 +25,7 @@ function Note( { email, tags, content} ) {
                     { email }
                 </Typography>
             </CardContent>
-            <Link to={`/notes?tag=${email}`} className={Styles.link}>
+            <Link to={`/notes?email=${email}`} className={Styles.link}>
                 <CardActions>
                     <Button size="small">Notes of User</Button>
                 </CardActions>

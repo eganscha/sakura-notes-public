@@ -3,7 +3,7 @@ import {Button} from "@mui/material";
 
 function searchButton() {
     return (
-        <Button variant="contained" sx={{
+        <Button type={"submit"} variant="contained" sx={{
             borderRadius: '10px',
             textTransform: 'none',
             fontSize: '1rem',

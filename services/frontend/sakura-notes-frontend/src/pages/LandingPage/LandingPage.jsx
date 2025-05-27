@@ -7,12 +7,19 @@ import CreateButton from "../../components/CreateButton/CreateButton.jsx";
 import SearchButton from "../../components/SearchButton/SearchButton.jsx";
 import ExplorePopularNotes from "../../components/ExplorePopularNotes/ExplorePopularNotes.jsx";
 import BrowseByTag from "../../components/BrowseByTag/BrowseByTag.jsx";
+import {useNavigate} from "react-router";
 
 function LandingPage() {
     const [enteredTag, setEnteredTag] = useState('');
+    const navigate = useNavigate();
 
     async function handleSubmit(event) {
         event.preventDefault();
+        console.log("Clicked!");
+        console.log(enteredTag);
+        if(enteredTag) {
+            navigate(`/notes?tag=${enteredTag}`);
+        }
     }
 
     return (
@@ -21,7 +28,7 @@ function LandingPage() {
                 <LogoWithText></LogoWithText>
                 <CreateButton></CreateButton>
                 <form className={styles.searchContainer} onSubmit={handleSubmit}>
-                    <SearchBar></SearchBar>
+                    <SearchBar value={enteredTag} onChange={e => setEnteredTag(e.target.value)}></SearchBar>
                     <SearchButton></SearchButton>
                 </form>
             </header>

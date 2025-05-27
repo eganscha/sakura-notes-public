@@ -3,12 +3,13 @@ import Box from "@mui/material/Box";
 import SearchSharp from '@mui/icons-material/SearchSharp';
 import TextField from '@mui/material/TextField';
 
-function SearchBar() {
+function SearchBar({ value, placeholder, onChange }) {
+
     return (
         <Box className={styles.searchBar} sx={{ '& > :not(style)': { m: 0 } }}>
             <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                 <SearchSharp sx={{ color: 'var(--base-grey)', mr: 1, my: 0.5 }} />
-                <TextField id="input-with-sx" label="Search by Tag" variant="standard" sx={{
+                <TextField type={"text"} value={value} placeholder={placeholder} onChange={onChange} id="input-with-sx" label="Search by Tag" variant="standard" sx={{
                     width: '100%',
                     label: {
                         color: 'var(--base-grey)',

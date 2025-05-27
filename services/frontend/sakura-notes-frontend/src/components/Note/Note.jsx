@@ -4,6 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import {Link} from 'react-router';
 
 function Note( { email, tags, content} ) {
     const listTags = tags.map(tag =>
@@ -24,9 +25,11 @@ function Note( { email, tags, content} ) {
                     { email }
                 </Typography>
             </CardContent>
-            <CardActions>
-                <Button size="small">Notes of User</Button>
-            </CardActions>
+            <Link to={`/notes?tag=${email}`} className={Styles.link}>
+                <CardActions>
+                    <Button size="small">Notes of User</Button>
+                </CardActions>
+            </Link>
         </Card>
     );
 }

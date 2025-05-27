@@ -1,4 +1,5 @@
 import API from "../API.js";
+import NoteModel from "../../models/NoteModel.js";
 
 // Description: Gets a singular note object by its ID.
 // ------------------------------------------------------------------
@@ -31,7 +32,15 @@ async function getSingularNoteByID(noteID) {
     };
 
     const response = await fetch(url, options);
-    console.log(response);
+    if(response.status === 200) {
+        const data = await response.json();
+        return new NoteModel(
+            data.note.id,
+            data.note.email,
+            data.note.content,
+            data.note.tags
+        );
+    }
 }
 
 export default getSingularNoteByID;

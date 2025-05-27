@@ -15,8 +15,6 @@ function LandingPage() {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        console.log("Clicked!");
-        console.log(enteredTag);
         if(enteredTag) {
             navigate(`/notes?tag=${enteredTag}`);
         }

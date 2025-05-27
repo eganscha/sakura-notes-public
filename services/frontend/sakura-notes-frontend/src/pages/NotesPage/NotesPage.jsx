@@ -1,14 +1,16 @@
 import Styles from './NotesPage.module.css';
-import {useEffect} from "react";
-import getSingularNoteByID from "../../utils/API/requests/getSingularNoteByID.js";
+import {useEffect, useState} from "react";
 import getAllNotesByTag from "../../utils/API/requests/getAllNotesByTag.js";
+import NotesList from "../../components/NotesList/NotesList.jsx";
 
 function NotesPage() {
+    const [notes, setNotes] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const notes = await getAllNotesByTag("metal gear");
+                const response = await getAllNotesByTag("metal gear");
+                setNotes(response);
                 console.log(notes);
             } catch (exception) {
                 console.error(exception)
@@ -18,9 +20,9 @@ function NotesPage() {
     }, []);
 
     return (
-        <>
-            <p>Hallo Notes! :)</p>
-        </>
+        <div>
+            {notes ? (<NotesList notes={notes}/>) : null}
+        </div>
     );
 }
 

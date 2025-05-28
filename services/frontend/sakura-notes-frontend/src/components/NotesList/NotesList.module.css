@@ -2,7 +2,7 @@
     list-style-type: none;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     background-color: var(--bg-medium);
     padding: 16px;
@@ -10,15 +10,10 @@
 }
 @media (max-width: 1300px) {
     .notesGridContainer {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-@media (max-width: 920px) {
-    .notesGridContainer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-@media (max-width: 640px) {
+@media (max-width: 920px) {
     .notesGridContainer {
         grid-template-columns: repeat(1, 1fr);
     }

@@ -1,10 +1,11 @@
 import styles from './Header.module.css';
 import LogoWithText from "../LogoWithText/LogoWithText.jsx";
 import CreateButton from "../CreateButton/CreateButton.jsx";
-import SearchBar from "../SearchBar/SearchBar.jsx";
+import CustomTextField from "../CustomTextField/CustomTextField.jsx";
 import SearchButton from "../SearchButton/SearchButton.jsx";
 import {useState} from "react";
 import {useNavigate} from "react-router";
+import SearchTextField from "../SearchTextField/SearchTextField.jsx";
 
 function Header() {
     const [enteredTag, setEnteredTag] = useState('');
@@ -22,7 +23,7 @@ function Header() {
             <LogoWithText></LogoWithText>
             <CreateButton></CreateButton>
             <form className={styles.searchContainer} onSubmit={handleSubmit}>
-                <SearchBar value={enteredTag} onChange={e => setEnteredTag(e.target.value)}></SearchBar>
+                <SearchTextField value={enteredTag} onChange={e => setEnteredTag(e.target.value)}></SearchTextField>
                 <SearchButton></SearchButton>
             </form>
         </header>

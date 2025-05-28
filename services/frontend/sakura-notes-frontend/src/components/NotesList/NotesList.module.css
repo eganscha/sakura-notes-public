@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    background-color: pink;
+    background-color: var(--bg-medium);
     padding: 16px;
     border-radius: 16px;
 }

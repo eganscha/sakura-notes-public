@@ -23,6 +23,17 @@ services:
       - '8000:8000'
     depends_on:
       - redisdb
+  frontend:
+    build:
+      context: ../../services/frontend/sakura-notes-frontend
+    env_file:
+      - ./env/frontend.env
+    networks:
+      - sakura-notes-net
+    ports:
+      - '5173:5173'
+    depends_on:
+      - backend
 
 volumes:
   database:

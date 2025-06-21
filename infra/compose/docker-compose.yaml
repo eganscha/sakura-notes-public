@@ -8,8 +8,6 @@ services:
       - ./env/redisdb.env
     networks:
       - sakura-notes-internal-net
-    ports:
-      - '6379:6379'
   backend_1:
     build:
       context: ../../services/backend/sakura-notes-laravel-api

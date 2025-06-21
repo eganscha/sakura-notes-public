@@ -45,7 +45,8 @@ services:
       - backend_1
       - backend_2
   nginx:
-    image: nginx:latest
+    build:
+      context: ../../services/nginx
     env_file:
       - ./env/nginx.env
     networks:

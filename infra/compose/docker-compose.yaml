@@ -54,9 +54,6 @@ services:
     ports:
       - "8000:80"
       - "8001:443"
-    volumes:
-      - ../../services/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ../../services/nginx/ssl_local_certificate:/etc/nginx/ssl/
     depends_on:
       - backend_1
       - backend_2

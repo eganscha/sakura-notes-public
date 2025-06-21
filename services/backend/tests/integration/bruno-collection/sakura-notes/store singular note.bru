@@ -1,0 +1,23 @@
+meta {
+  name: store singular note
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8000/api/notes
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "test@example.com",
+    "content": "Hallo welt! :)",
+        "tags": [
+          "urgent",
+          "cloud_computing",
+          "metal gear"
+        ]
+  }
+}

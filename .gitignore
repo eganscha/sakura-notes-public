@@ -5,9 +5,11 @@ docs/
 **/.DS_Store
 **/.idea/
 
+# COMMENTED OUT FOR PROJECT
 # Exclude the infra/compose/env/ folder to not leak any pw's inside of the env files
-infra/compose/env/
+# infra/compose/env/
 
+# COMMENTED OUT FOR PROJECT
 # BACKEND:
-# Exclude backend tests folder, in fact just Bruno (like a local-only Postman) for testing API requests. TODO: Reevaluate this decision.
-services/backend/tests/
+# Exclude backend tests folder, in fact just Bruno (like a local-only Postman) for testing API requests.
+# services/backend/tests/

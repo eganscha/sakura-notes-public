@@ -1,11 +1,11 @@
 import Styles from './NotesPage.module.css';
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import getAllNotesByTag from "../../utils/API/requests/getAllNotesByTag.js";
 import getAllNotesByEmail from "../../utils/API/requests/getAllNotesByEmail.js";
 import NotesList from "../../components/NotesList/NotesList.jsx";
-import {useSearchParams} from "react-router";
+import { useSearchParams } from "react-router";
 import Header from "../../components/Header/Header.jsx";
-import {Container} from "@mui/material";
+import { Container } from "@mui/material";
 
 function NotesPage() {
     const [notes, setNotes] = useState(null);
@@ -18,7 +18,7 @@ function NotesPage() {
             try {
                 let response = null;
 
-                if(tag) {
+                if (tag) {
                     response = await getAllNotesByTag(tag);
                 } else if (email) {
                     response = await getAllNotesByEmail(email);
@@ -32,7 +32,7 @@ function NotesPage() {
             }
         }
         fetchData();
-    }, []);
+    }, [tag, email]);
 
     return (
         <div>
@@ -42,7 +42,7 @@ function NotesPage() {
             }}>
                 {tag ? <h1 style={{ marginBottom: '8px' }}>Notes tagged with "{tag}"</h1> : null}
                 {email ? <h1 style={{ marginBottom: '8px' }}>Notes of "{email}"</h1> : null}
-                {notes && notes.length > 0 ? (<NotesList notes={notes}/>) : (<p>No Notes</p>)}
+                {notes && notes.length > 0 ? (<NotesList notes={notes} />) : (<p>No Notes</p>)}
             </Container>
         </div>
     );

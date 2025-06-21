@@ -7,10 +7,10 @@ services:
     env_file:
       - ./env/redisdb.env
     networks:
-      - sakura-notes-net
+      - sakura-notes-internal-net
     ports:
       - '6379:6379'
-  backend:
+  backend_1:
     build:
       context: ../../services/backend/sakura-notes-laravel-api
     volumes:
@@ -19,8 +19,19 @@ services:
       - ./env/api.env
     networks:
       - sakura-notes-net
-    ports:
-      - '8000:8000'
+      - sakura-notes-internal-net
+    depends_on:
+      - redisdb
+  backend_2:
+    build:
+      context: ../../services/backend/sakura-notes-laravel-api
+    volumes:
+      - api-logs:/data/logs
+    env_file:
+      - ./env/api.env
+    networks:
+      - sakura-notes-net
+      - sakura-notes-internal-net
     depends_on:
       - redisdb
   frontend:
@@ -30,14 +41,31 @@ services:
       - ./env/frontend.env
     networks:
       - sakura-notes-net
-    ports:
-      - '5173:5173'
     depends_on:
-      - backend
+      - backend_1
+      - backend_2
+  nginx:
+    image: nginx:latest
+    env_file:
+      - ./env/nginx.env
+    networks:
+      - sakura-notes-net
+    ports:
+      - "8000:80"
+      - "8001:443"
+    volumes:
+      - ../../services/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ../../services/nginx/ssl_local_certificate:/etc/nginx/ssl/
+    depends_on:
+      - backend_1
+      - backend_2
+      - frontend
 
 volumes:
   database:
   api-logs:
 
+
 networks:
   sakura-notes-net:
+  sakura-notes-internal-net:

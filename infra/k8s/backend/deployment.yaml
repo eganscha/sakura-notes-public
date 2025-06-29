@@ -1,7 +1,27 @@
-apiVersion: v1
-kind: ConfigMap
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: app-config
+  name: backend
   namespace: sakura-notes
-data:
-  DBHOST: db
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels: 
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: sakura-notes-backend:latest
+        imagePullPolicy: Never
+        ports:
+        - name: http
+          containerPort: 8000
+        env:
+          - name: REDIS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: global-secrets
+                key: REDIS_PASSWORD

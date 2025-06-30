@@ -1,7 +1,8 @@
+# If not needed, delete
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: global-config
   namespace: sakura-notes
 data:
-  DBHOST: db
+  EMPTY_KEY: empty_value

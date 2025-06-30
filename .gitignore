@@ -13,3 +13,7 @@ docs/
 # BACKEND:
 # Exclude backend tests folder, in fact just Bruno (like a local-only Postman) for testing API requests.
 # services/backend/tests/
+
+# Ignore some of the kubernetes scripts that are for personal use only
+infra/k8s/scripts/startup.sh
+infra/k8s/scripts/cleanup.sh

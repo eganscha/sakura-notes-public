@@ -15,5 +15,5 @@ docs/
 # services/backend/tests/
 
 # Ignore some of the kubernetes scripts that are for personal use only
-infra/k8s/scripts/startup.sh
-infra/k8s/scripts/cleanup.sh
+# infra/k8s/scripts/startup.sh
+# infra/k8s/scripts/shutdown.sh

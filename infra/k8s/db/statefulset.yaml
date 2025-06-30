@@ -27,11 +27,11 @@ spec:
                 name: global-secrets
                 key: REDIS_PASSWORD
           volumeMounts:
-            - name: redis-data
+            - name: database
               mountPath: /data/db
   volumeClaimTemplates:
     - metadata:
-        name: redis-data
+        name: database
       spec:
         accessModes:
           - "ReadWriteOnce"

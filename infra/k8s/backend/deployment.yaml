@@ -25,3 +25,16 @@ spec:
               secretKeyRef:
                 name: global-secrets
                 key: REDIS_PASSWORD
+        volumeMounts:
+            - name: api-logs
+              mountPath: /data/logs
+  volumeClaimTemplates:
+    - metadata:
+        name: api-logs
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        storageClassName: standard
+        resources:
+          requests:
+            storage: 1Gi

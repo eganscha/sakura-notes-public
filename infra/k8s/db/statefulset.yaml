@@ -26,6 +26,11 @@ spec:
               secretKeyRef:
                 name: global-secrets
                 key: REDIS_PASSWORD
+          - name: CRON_SCHEDULING
+            valueFrom:
+              configMapKeyRef:
+                name: db-config
+                key: CRON_SCHEDULING
           volumeMounts:
             - name: database
               mountPath: /data/db

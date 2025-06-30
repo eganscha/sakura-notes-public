@@ -17,3 +17,7 @@ kubectl apply -f ../backend/service.yaml
 # Frontend
 kubectl apply -f ../frontend/deployment.yaml
 kubectl apply -f ../frontend/service.yaml
+
+# Nginx
+kubectl apply -f ../nginx/deployment.yaml
+kubectl apply -f ../nginx/service.yaml

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ./build.sh
+./build.sh
 ./deploy.sh
 
 # Delete Port-Forwarding Later or Keep?

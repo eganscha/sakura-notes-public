@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: redis-db
+  name: redisdb
   namespace: sakura-notes
 spec:
   selector:
     matchLabels:
-      app: redis-db
-  serviceName: redis-db
+      app: redisdb
+  serviceName: redisdb
   replicas: 1
   template:
     metadata:
       labels:
-        app: redis-db
+        app: redisdb
     spec:
       containers:
-        - name: redis-db
-          image: sakura-notes-redis-db:latest
+        - name: redisdb
+          image: sakura-notes-redisdb:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 6379

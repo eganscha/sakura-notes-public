@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BACKEND_IMG=sakura-notes-backend
-DB_IMG=sakura-notes-redis-db
+DB_IMG=sakura-notes-redisdb
 
 docker build -t $BACKEND_IMG:latest ../../../services/backend/sakura-notes-laravel-api
 docker build -t $DB_IMG:latest ../../../services/db

@@ -10,5 +10,10 @@ kubectl apply -f ../db/statefulset.yaml
 kubectl apply -f ../db/service.yaml
 
 # Backend
+kubectl apply -f ../backend/api-logs-pvc.yaml
 kubectl apply -f ../backend/deployment.yaml
 kubectl apply -f ../backend/service.yaml
+
+# Frontend
+kubectl apply -f ../frontend/deployment.yaml
+kubectl apply -f ../frontend/service.yaml

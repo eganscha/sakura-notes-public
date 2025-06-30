@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: sakura-notes
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels: 
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: sakura-notes-frontend:latest
+        imagePullPolicy: Never
+        ports:
+        - name: http
+          containerPort: 5173

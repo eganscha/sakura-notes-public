@@ -28,13 +28,7 @@ spec:
         volumeMounts:
             - name: api-logs
               mountPath: /data/logs
-  volumeClaimTemplates:
-    - metadata:
-        name: api-logs
-      spec:
-        accessModes:
-          - "ReadWriteOnce"
-        storageClassName: standard
-        resources:
-          requests:
-            storage: 1Gi
+      volumes:
+        - name: api-logs
+          persistentVolumeClaim:
+            claimName: api-logs

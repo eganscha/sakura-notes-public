@@ -3,7 +3,7 @@
 # At least one parameter has to be passed to the script to determine the target O.S.
 # The script accepts no more than two parameters
 if [[ $# -lt 1 ]] || [[ $# -gt 2 ]]; then
-    echo "Invalid number of parameters passed. Expected: 1-2"
+    echo "Invalid number of parameters passed. Expected: 1-2, received: $#"
     echo "\$0 (required) - Target O.S. (linux, macOS)"
     echo "\$1 (optional) - Target Mode (ingress, nginx)"
 
@@ -57,18 +57,18 @@ else
     echo "Minikube is already running. Please make sure the required addons for your target mode are enabled."
 fi
 
-# Run minikube tunnel if the mode is ingress, the target O.S. is macos
+# Run minikube tunnel as a background process if the mode is ingress, the target O.S. is macos
 # and minikube tunnel is not already running
-if [[ "$MODE" == "ingress" ]] && [[ "$TARGET_OS" == "macos" ]]; then
-    if ! ps aux | grep '[m]inikube tunnel' >/dev/null 2>&1; then
-        echo "starting minikube tunnel via sudo for macOS in the background."
-        # (-p fails silently, if the script is re-run)
-        mkdir -p tmp
-        sudo nohup minikube tunnel > "./tmp/minikube-tunnel-pid.log" 2>&1 &
-    else
-        echo "minikube tunnel already running."
-    fi
-fi
+# if [[ "$MODE" == "ingress" ]] && [[ "$TARGET_OS" == "macos" ]]; then
+#     if ! ps aux | grep '[m]inikube tunnel' >/dev/null 2>&1; then
+#         echo "starting minikube tunnel via sudo for macOS in the background."
+#         # (-p fails silently, if the script is re-run)
+#         mkdir -p tmp
+#         sudo nohup minikube tunnel > "./tmp/minikube-tunnel-pid.log" 2>&1 &
+#     else
+#         echo "minikube tunnel already running."
+#     fi
+# fi
 
 # Build & Deploy
 ./build.sh "$MODE"

@@ -20,6 +20,7 @@ kubectl apply -f ../common/global-config.yaml
 kubectl apply -f ../common/global-secrets.yaml
 
 # DB
+kubectl apply -f ../db/config.yaml
 kubectl apply -f ../db/statefulset.yaml
 kubectl apply -f ../db/service.yaml
 

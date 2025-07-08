@@ -4,5 +4,9 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {allowedHosts: ['frontend']}
+  server: {
+    host: true,                       // listen on 0.0.0.0 inside the container
+    port: 5173,                       // (optional, keeps the default)
+    allowedHosts: ['frontend', 'sakura.notes']
+  }
 })

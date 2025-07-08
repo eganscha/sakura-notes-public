@@ -41,13 +41,13 @@ Follow these steps to start and test the Sakura-Notes application via Kubernetes
    The script will launch minikube with all the required addons for the desired mode (assuming minikube is not already running).
    It will subsequently start to build and deploy the application with the selected load-balancer.
 
-3. **If using ingress as a Load-Balancer:**
+3. **[If using ingress as a Load-Balancer] - Run sudo minikube tunnel:**
 
     Run `sudo minikube tunnel` in a separate terminal
 
     This will ensure that the application can reach the website if you're using ingress.
 
-4. **If using ingress as a Load-Balancer:**
+4. **[If using ingress as a Load-Balancer] - Add sakura.notes to /etc/hosts:**
     
     Add the following line to `/etc/hosts`
     

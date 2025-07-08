@@ -57,7 +57,8 @@ Follow these steps to start and test the Sakura-Notes application via Kubernetes
 
 5. **Connect to the application via http:**
 
-    Navigate to `http://sakura.notes` in your browser if you're using ingress.
+    Navigate to `http://sakura.notes` in your browser if you're using ingress. You will be re-directed to the https:// version of the website.
+    (Adjust the ingress.yaml file, if you would like to change this behavior for some reason.)
     
     Navigate to `http://localhost:8000` in your browser if you're using nginx.
 

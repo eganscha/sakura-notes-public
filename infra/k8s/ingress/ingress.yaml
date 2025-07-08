@@ -3,7 +3,15 @@ kind: Ingress
 metadata:
   name: sakura-notes-ingress
   namespace: sakura-notes
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
+  tls:
+    - hosts:
+        - sakura.notes
+      secretName: sakura-notes-tls
+
   rules:
   - host: sakura.notes
     http:

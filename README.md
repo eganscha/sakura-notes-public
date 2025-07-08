@@ -16,7 +16,7 @@ Programming Language: php
 
 Database Platform: redis
 
-## Starting the Application
+## Starting the Application via Kubernetes
 
 Follow these steps to start and test the Sakura-Notes application via Kubernetes:
 
@@ -69,7 +69,7 @@ Follow these steps to start and test the Sakura-Notes application via Kubernetes
 
     (The certificates are self-signed, you will receive a warning about establishing an insecure connection).
 
-7. **To terminate the application press Ctrl + C in the minikube tunnel terminal and proceed to step 8.:**
+7. **[If using ingress as a Load-Balancer] - Press Ctrl + C in the minikube tunnel terminal and proceed to step 8.:**
     
     This will ensure that the minikube tunnel terminates correctly.
 
@@ -78,3 +78,35 @@ Follow these steps to start and test the Sakura-Notes application via Kubernetes
     Run `./shutdown.sh`
     
     This deletes the sakura-notes kubernetes namespace, and then runs minikube stop.
+
+## Starting the Application via docker-compose:
+
+Follow these steps to start and test the Sakura-Notes application via docker-compose:
+
+0. **Expected Operating System: Linux or macOS**
+
+    The following instructions explain how to properly set up the application for either Linux or macOS.
+
+1. **Navigate to the compose folder:**
+
+   `cd infra/compose`
+
+2. **Run docker-compose up -d inside the infra/compose folder:**
+
+    Run `docker-compose up -d`
+
+    This will launch the application via docker-compose. For load-balancing nginx will be used.
+
+3. **Connect to the application via http:**
+
+    Navigate to `http://localhost:8000` in your browser if you're using nginx.
+
+4. **Connect to the application via https:**
+
+    Navigate to `https://localhost:8001` in your browser.
+
+5. **Run docker-compose down inside the infra/compose folder:**
+
+    Run `docker-compose down`
+
+    This will shut-down the application via docker-compose.

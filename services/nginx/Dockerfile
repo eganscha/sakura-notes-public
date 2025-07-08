@@ -12,7 +12,7 @@ RUN apt-get -y update \
     && apt-get install -y nginx
 
 # Copy configuration files AFTER installation (important, as nginx overwrites them otherwise)
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf.template /etc/nginx/nginx.conf.template
 COPY ssl_local_certificate/ /etc/nginx/ssl/
 
 # Move and execute the docker-entrypoint script

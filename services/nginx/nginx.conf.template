@@ -5,7 +5,8 @@ http {
     upstream backend {
         # server backend_1:8000;
         # server backend_2:8000;
-        server backend:8000;
+        # server backend:8000;
+        ${NGINX_BACKEND_SERVERS}
     }
 
     upstream frontend {

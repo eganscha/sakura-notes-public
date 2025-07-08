@@ -21,3 +21,10 @@ spec:
           containerPort: 80
         - name: https
           containerPort: 443
+
+        env:
+          - name: NGINX_BACKEND_SERVERS
+            valueFrom:
+              configMapKeyRef:
+                name: nginx-config
+                key: NGINX_BACKEND_SERVERS

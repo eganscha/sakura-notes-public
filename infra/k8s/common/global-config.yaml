@@ -1,8 +1,9 @@
-# If not needed, delete
+# shared configs go here
+# (as of right now it's not needed)
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: global-config
   namespace: sakura-notes
 data:
-  EMPTY_KEY: empty_value
+  KEY: value

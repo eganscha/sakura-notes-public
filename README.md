@@ -35,7 +35,7 @@ Scripts that manage deployment and building for different configurations.
 
 The .env and secrets.yaml files are for demonstration purposes only.
 
-## Starting the Application via (Kubernetes + Ingress)
+## Running the Application via (Kubernetes + Ingress)
 
 1. **Navigate to the scripts folder**
 
@@ -78,7 +78,7 @@ The .env and secrets.yaml files are for demonstration purposes only.
     This deletes the sakura-notes kubernetes namespace and then runs minikube stop.
 
 
-## Starting the Application via (Kubernetes + Nginx)
+## Running the Application via (Kubernetes + Nginx)
 
 1. **Navigate to the scripts folder:**
 
@@ -105,7 +105,7 @@ The .env and secrets.yaml files are for demonstration purposes only.
     This deletes the sakura-notes kubernetes namespace, and then runs minikube stop.
 
 
-## Starting the Application via docker-compose:
+## Running the Application via docker-compose:
 
 1. **Navigate to the compose folder:**
 

@@ -19,7 +19,7 @@ Database Platform: redis
 
 ## Project Highlights
 
-The services are all implemented with more realistic technologies than was minimally required and are closer to real-world environments (Backend in Laravel, Frontend in React, etc.).
+The services are all implemented with more realistic technologies than was minimally required and are closer to real-world environments (Backend in Laravel, Frontend in React, etc.). This makes the containers more realistic.
 
 Load Balancing is supported for both **k8s (via Ingress or "raw" Nginx)**, and **docker-compose (via Nginx)**.
 

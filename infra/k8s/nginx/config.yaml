@@ -4,4 +4,4 @@ metadata:
   name: nginx-config
   namespace: sakura-notes
 data:
-  NGINX_BACKEND_SERVERS: 'server backend:8000;'
+  NGINX_BACKEND_SERVERS: server backend:8000;

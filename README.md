@@ -14,9 +14,15 @@ Database Platform: redis
 
 ## Project Overview
 
-The project is structured into two main blocks, services and infra.
+<div style="display:flex; align-items:flex-start; gap:1rem">
+  <img src="./readme_imgs/Project-Structure-Tree.png"
+       alt="Project-Structure-Tree"
+       width="250px"/>
 
-![tree](./readme_imgs/Project-Structure-Tree.png)
+  <p>
+    The project is structured into two main blocks.
+  </p>
+</div>
 
 ## Starting the Application via Kubernetes
 

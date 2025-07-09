@@ -16,6 +16,8 @@ Database Platform: redis
 
 The project is structured into two main blocks, services and infra.
 
+![tree](./readme_imgs/Project-Structure-Tree.png)
+
 ## Starting the Application via Kubernetes
 
 Follow these steps to start and test the Sakura-Notes application via Kubernetes:

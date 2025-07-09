@@ -26,6 +26,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 RUN apt-get install -y git
 # Install Laravel with Composer
 RUN composer global require laravel/installer
+RUN composer install
 
 # Move and execute the docker-entrypoint script
 # and subsequently launch Laravel as a result of it

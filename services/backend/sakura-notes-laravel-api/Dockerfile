@@ -22,8 +22,10 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --${COMPOSER_VERSION_CHANNEL} \
     && php -r "unlink('composer-setup.php');" \
     && mv composer.phar /usr/local/bin/composer
-# Install git so Composer can work successfully
-RUN apt-get install -y git
+# Install git and 7z so Composer can work successfully
+RUN apt-get install -y git \
+    && apt-get install -y p7zip-full
+
 # Install Laravel with Composer
 RUN composer global require laravel/installer
 RUN composer install

@@ -14,8 +14,7 @@ Database Platform: redis
 
 ## Project Overview
 
-| ![Project tree](./readme_imgs/Project-Structure-Tree.png) |  
-The project is structured into two main blocks. |
+| <img src="./readme_imgs/Project-Structure-Tree.png" width="240"> | The project is structured into two main blocks. |
 |---|---|
 
 ## Starting the Application via Kubernetes

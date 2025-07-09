@@ -14,7 +14,7 @@ Database Platform: redis
 
 ## Project Overview
 
-| <img src="./readme_imgs/Project-Structure-Tree.png" width="240"> | The project is structured into two main blocks. |
+| <img src="./readme_imgs/Project-Structure-Tree.png" width="240"> | The project is structured into two main blocks.<br><br>servies/<br>Source code and Dockerfiles for each project component (backend, frontend, nginx, redis, etc.). Anything that is required to build the Docker Images locally also lives here (with exception of the .env files and secrets).<br><br>infra/<br>"Glue" to run those images with either docker-compose, or k8s.<br><br>infra/compose/<br>Contains the docker-compose.yaml and .env files.<br><br>infra/k8s/<br>Contains Kubernetes specific .yaml files.|
 |---|---|
 
 ## Starting the Application via Kubernetes

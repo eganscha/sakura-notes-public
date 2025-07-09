@@ -14,15 +14,9 @@ Database Platform: redis
 
 ## Project Overview
 
-<div style="display:flex; align-items:flex-start; gap:1rem">
-  <img src="./readme_imgs/Project-Structure-Tree.png"
-       alt="Project-Structure-Tree"
-       width="250px"/>
-
-  <p>
-    The project is structured into two main blocks.
-  </p>
-</div>
+| ![Project tree](./readme_imgs/Project-Structure-Tree.png) |  
+The project is structured into two main blocks. |
+|---|---|
 
 ## Starting the Application via Kubernetes
 

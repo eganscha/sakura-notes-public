@@ -31,9 +31,20 @@ Scripts that manage deployment and building for different configurations.
 
 ## Notes
 
-**Expected Operating System: Linux or macOS**
-
 The .env and secrets.yaml files are for demonstration purposes only.
+
+## Requirements
+
+- Supported Operating Systems: **Linux** and **macOS**
+
+- **docker** and **docker-compose**
+
+- **kubectl** and **minikube**
+
+- **OpenSSL** (most likely installed by default already)
+
+- **Bash** (most likely installed by default already)
+
 
 ## Running the Application via (Kubernetes + Ingress)
 

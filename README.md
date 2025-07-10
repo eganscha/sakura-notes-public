@@ -21,13 +21,13 @@ Database Platform: redis
 
 The services are all implemented with more realistic technologies than was minimally required and are closer to real-world environments (Backend in Laravel, Frontend in React, etc.). This makes the containers more realistic.
 
-Load Balancing is supported for both **k8s (via Ingress or "raw" Nginx)**, and **docker-compose (via Nginx)**.
+Load Balancing is supported for both **k8s (via Ingress)**, and **docker-compose (via Nginx)**.
 
 HTTPS is supported for all environments and launch configurations.
 
-The database takes regular backups of the redis-snapshots and writes them onto a mounted volume. The frequency can be configured via a **cron sheduling pattern** in the **redisdb.env file for compose** or **db/config.yaml for k8s**.
+The database takes regular backups of the redis-snapshots and writes them onto a mounted volume. The frequency can be configured via a **cron sheduling pattern** in the **redisdb.env file for compose** or **db/config.yaml for k8s**. The script itself is located in /services/db/backup_script.sh and some configuration gets done in /services/db/docker-entrypoint.sh
 
-Scripts that manage deployment and building for different configurations.
+Scripts that manage the deployment and building process for you.
 
 ## Notes
 
@@ -37,7 +37,7 @@ The .env and secrets.yaml files are for demonstration purposes only.
 
 - Supported Operating Systems: **Linux** and **macOS**
 
-- **docker** and **docker-compose**
+- **docker** and **docker compose**
 
 - **kubectl** and **minikube**
 
@@ -66,7 +66,9 @@ The .env and secrets.yaml files are for demonstration purposes only.
     
     Add the following line to `/etc/hosts`
     
-    `127.0.0.1  sakura.notes`
+    **macOS:** `127.0.0.1  sakura.notes`
+
+    **Linux:** `192.168.49.2  sakura.notes`
 
 5. **Connect to the application via http:**
 
@@ -89,42 +91,15 @@ The .env and secrets.yaml files are for demonstration purposes only.
     This deletes the sakura-notes kubernetes namespace and then runs minikube stop.
 
 
-## Running the Application via (Kubernetes + Nginx)
-
-1. **Navigate to the scripts folder:**
-
-   `cd infra/k8s/scripts`
-
-2. **Run ./start.sh nginx**
-
-   ```./start.sh nginx```
-
-   (Also launches minikube with all the required addons, if it's not already running).
-
-3. **Connect to the application via http:**
-    
-    Navigate to `http://localhost:8000` in your browser.
-
-4. **Connect to the application via https:**
-    
-    Navigate to `https://localhost:8001` in your browser.
-
-5. **Run ./shutdown.sh**
-
-    Run `./shutdown.sh`
-    
-    This deletes the sakura-notes kubernetes namespace, and then runs minikube stop.
-
-
-## Running the Application via docker-compose:
+## Running the Application via (docker-compose + nginx):
 
 1. **Navigate to the compose folder:**
 
    `cd infra/compose`
 
-2. **Run docker-compose up -d inside the infra/compose folder:**
+2. **Run docker compose up inside the infra/compose folder:**
 
-    Run `docker-compose up -d`
+    Run `docker compose up`
 
     This will launch the application via docker-compose. For load-balancing nginx will be used.
 
@@ -136,8 +111,6 @@ The .env and secrets.yaml files are for demonstration purposes only.
 
     Navigate to `https://localhost:8001` in your browser.
 
-5. **Run docker-compose down inside the infra/compose folder:**
+5. **Press Ctrl + C inside your terminal window:**
 
-    Run `docker-compose down`
-
-    This will shut-down the application via docker-compose.
+    This will shut-down the docker-compose application.

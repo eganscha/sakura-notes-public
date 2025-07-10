@@ -6,22 +6,22 @@ timestamp() {
   echo "($(date +"%Y-%m-%d_%H-%M-%S"))"
 }
 
-# Create /app/logs directory if it doesn't exist yet
-LOGS_DIR="/app/logs"
-STD_LOG="/app/logs/std_log.txt"
+# Create logs directory if it doesn't exist yet
+LOGS_DIR="/data/db/logs"
+STD_LOG="/data/db/logs/std_log.txt"
 if [ ! -d "$LOGS_DIR" ]; then
   mkdir $LOGS_DIR
   echo "$(timestamp): Created LOGS_DIR in $LOGS_DIR." >> "$STD_LOG"
 fi
 
-# Create /app/data directory if it doesn't exist yet
-DATA_DIR="/app/data"
+# Create data directory if it doesn't exist yet
+DATA_DIR="/data/db/data"
 if [ ! -d "$DATA_DIR" ]; then
   mkdir $DATA_DIR
   echo "$(timestamp): Created DATA_DIR in $DATA_DIR." >> "$STD_LOG"
 fi
 
-# Create /app/data/backups directory if it doesn't exist yet
+# Create backups directory if it doesn't exist yet
 BACKUP_DIR="${DATA_DIR}/backups"
 if [ ! -d "$BACKUP_DIR" ]; then
   mkdir $BACKUP_DIR

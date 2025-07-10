@@ -6,10 +6,10 @@ timestamp() {
   date +"%Y-%m-%d_%H-%M-%S"
 }
 
-STD_LOG="/app/logs/std_log.txt"
+STD_LOG="/data/db/logs/std_log.txt"
 ENV_FILE="/etc/redisdb.env"
 
-DATA_DIR="/app/data"
+DATA_DIR="/data/db/data"
 BACKUP_DIR="${DATA_DIR}/backups"
 
 # Load ENV_FILE

@@ -19,7 +19,7 @@ Database Platform: redis
 
 ## Project Highlights
 
-- The services are all implemented with more realistic technologies than was minimally required and are closer to real-world environments (Backend in Laravel, Frontend in React, etc.). This makes the containers more realistic..
+- The services are all implemented with more realistic technologies than was minimally required and are closer to real-world environments (Backend in Laravel, Frontend in React, etc.). This makes the containers more realistic.
 
 - Load Balancing is supported for both **k8s (via Ingress)**, and **docker-compose (via Nginx)**.
 
@@ -49,7 +49,7 @@ The .env and secrets.yaml files are for demonstration purposes only.
 
 1. **Navigate to the scripts folder**
 
-   ```cd infra/k8s/scripts```
+   ```cd cloud_computing_2025/infra/k8s/scripts```
 
 2. **Run ./start.sh**
 
@@ -94,7 +94,7 @@ The .env and secrets.yaml files are for demonstration purposes only.
 
 1. **Navigate to the compose folder:**
 
-   `cd infra/compose`
+   `cd cloud_computing_2025/infra/compose`
 
 2. **Run docker compose up inside the infra/compose folder:**
 

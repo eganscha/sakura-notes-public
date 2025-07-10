@@ -98,7 +98,7 @@ The .env and secrets.yaml files are for demonstration purposes only.
 
 2. **Run docker compose up inside the infra/compose folder:**
 
-    Run `docker compose up`
+    Run `docker compose up --build`
 
     This will launch the application via docker-compose. For load-balancing nginx will be used.
 

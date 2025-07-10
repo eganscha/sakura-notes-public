@@ -19,15 +19,16 @@ Database Platform: redis
 
 ## Project Highlights
 
-The services are all implemented with more realistic technologies than was minimally required and are closer to real-world environments (Backend in Laravel, Frontend in React, etc.). This makes the containers more realistic.
+- The services are all implemented with more realistic technologies than was minimally required and are closer to real-world environments (Backend in Laravel, Frontend in React, etc.). This makes the containers more realistic.
 
-Load Balancing is supported for both **k8s (via Ingress)**, and **docker-compose (via Nginx)**.
+- Load Balancing is supported for both **k8s (via Ingress)**, and **docker-compose (via Nginx)**.
 
-HTTPS is supported for all environments and launch configurations.
+- HTTPS is supported for all environments and launch configurations.
 
-The database takes regular backups of the redis-snapshots and writes them onto a mounted volume. The frequency can be configured via a **cron sheduling pattern** in the **redisdb.env file for compose** or **db/config.yaml for k8s**. The script itself is located in /services/db/backup_script.sh and some configuration gets done in /services/db/docker-entrypoint.sh
+- The database takes regular backups of the redis-snapshots and writes them onto a mounted volume. The frequency can be configured via a **cron sheduling pattern** in the **redisdb.env file for compose** or **db/config.yaml for k8s**. The script and behaviour is defined in **/services/db/backup_script.sh** and **/services/db/docker-entrypoint.sh**.
 
-Scripts that manage the deployment and building process for you.
+- Scripts that manage the deployment and building process for you.
+
 
 ## Notes
 

@@ -27,8 +27,6 @@ Database Platform: redis
 
 - The database takes regular backups of the redis-snapshots and writes them onto a mounted volume. The frequency can be configured via a **cron sheduling pattern** in the **redisdb.env file for compose** or **db/config.yaml for k8s**. The script and behaviour is defined in **/services/db/backup_script.sh** and **/services/db/docker-entrypoint.sh**.
 
-- Scripts that manage the deployment and building process for you.
-
 
 ## Notes
 

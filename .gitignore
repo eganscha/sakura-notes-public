@@ -11,4 +11,4 @@ docs/
 
 # BACKEND:
 # Exclude backend tests folder, in fact just Bruno (like a local-only Postman) for testing API requests.
-services/backend/tests/
+services/backend/tests/integration/bruno-collection/sakura-notes/

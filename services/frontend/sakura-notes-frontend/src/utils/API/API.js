@@ -1,5 +1,5 @@
 const API = {
-	BASE_URL: "/api/",
+	BASE_URL: "http://localhost:8000/api/",
 	ENDPOINTS: {
 		// POST
 		ADD_SINGULAR_NOTE: "notes",

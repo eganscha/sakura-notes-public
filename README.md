@@ -51,9 +51,9 @@ The .env and secrets.yaml files are for demonstration purposes only.
 
    ```cd infra/k8s/scripts```
 
-2. **Run ./start.sh ingress**
+2. **Run ./start.sh**
 
-   ```./start.sh ingress```
+   ```./start.sh```
 
    (Also launches minikube with all the required addons, if it's not already running).
 
